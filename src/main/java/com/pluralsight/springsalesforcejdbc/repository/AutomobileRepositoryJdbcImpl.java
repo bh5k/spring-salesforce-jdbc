@@ -45,6 +45,7 @@ public class AutomobileRepositoryJdbcImpl implements AutomobileRepository {
         return autos;
     }
 
+    @Cacheable("autos")
     public List<Automobile> findAllJdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         List<Automobile> autos = jdbcTemplate.query("Select * from AUTOMOBILE", new RowMapper<Automobile>() {
