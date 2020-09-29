@@ -18,19 +18,7 @@ class SpringSalesforceJdbcApplicationTests {
 
 	@Test
 	void testJdbc() {
-		Long time = System.currentTimeMillis();
-		System.out.println("Before first:" + time);
 		List<Automobile> autos = automobileService.findAll();
 		assertNotNull(autos);
-		System.out.println("Elapsed:" + (System.currentTimeMillis() - time));
-	}
-
-	@Test
-	void testJdbcCached() {
-		Long time = System.currentTimeMillis();
-		System.out.println("Before second:" + time);
-		List<Automobile> autos = automobileService.findAll();
-		assertNotNull(autos);
-		System.out.println("Elapsed:" + (System.currentTimeMillis() - time));
 	}
 }
